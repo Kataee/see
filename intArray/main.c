@@ -1,6 +1,5 @@
-#include <stdio.h>
-
+#include "source.h"
 int main() {
-    printf("Hello, World!\n");
+    createArray(5);
     return 0;
 }
