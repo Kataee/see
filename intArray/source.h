@@ -13,7 +13,11 @@ typedef struct {
     int *elements;
 } IntArray;
 
+//létrehozás
 IntArray* createArray(int dimension);
+
+//beolvasás
+void readArray(const char *fileName, IntArray **array);
 
 
 #endif //INTARRAY_SOURCE_H
