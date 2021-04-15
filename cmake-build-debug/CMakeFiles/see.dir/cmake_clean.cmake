@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/see.dir/main.c.obj"
+  "CMakeFiles/see.dir/source.c.obj"
   "libsee.dll.a"
   "see.exe"
   "see.exe.manifest"

@@ -3,4 +3,4 @@ project(see C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(see main.c)
+add_executable(see main.c source.c header.h)

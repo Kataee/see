@@ -93,12 +93,12 @@ clean: CMakeFiles/see.dir/clean
 CMakeFiles/see.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\see.dir\build.make CMakeFiles/see.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\see.dir\build.make CMakeFiles/see.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Kataee\Documents\Class2\Prog2_AdatSz2\see\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target see"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Kataee\Documents\Class2\Prog2_AdatSz2\see\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target see"
 .PHONY : CMakeFiles/see.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/see.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Kataee\Documents\Class2\Prog2_AdatSz2\see\cmake-build-debug\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Kataee\Documents\Class2\Prog2_AdatSz2\see\cmake-build-debug\CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/see.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Kataee\Documents\Class2\Prog2_AdatSz2\see\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/see.dir/rule
