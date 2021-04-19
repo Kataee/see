@@ -14,7 +14,7 @@ IntArray* createArray(int dimension) {
     if (!newArray->elements) {
         exit(2);
     }
-    printf("Array created\n");
+    printf("Array created, size %i\n", newArray->size);
     return newArray;
 }
 
@@ -33,9 +33,26 @@ void readArray(const char *fileName, IntArray **array) {
         //if end of file, return
         if (feof(f)) {
             printf("End of file\n");
+            realloc((*array)->elements, i);
+            (*array)->size = i;
+            printf("Array reallocated, size %i\n", (*array)->size);
             return;
         }
         fscanf(f, "%i", &(*array)->elements[i]);
         printf("%i ", (*array)->elements[i]);
     }
+}
+
+void fillArray(int* array, int dimension, int first, int last) {
+    srand(time(0));
+    for (int i=0; i<dimension; ++i) {
+        array[i] = rand() % (last - first) + first;
+    }
+}
+
+void printArray(IntArray* array) {
+    for (int i=0; i< array->size; ++i) {
+        printf("%i ", (*array).elements[i]);
+    }
+    printf("\n");
 }

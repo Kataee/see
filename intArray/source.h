@@ -7,6 +7,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
 typedef struct {
     int size;
@@ -18,6 +19,13 @@ IntArray* createArray(int dimension);
 
 //beolvasás
 void readArray(const char *fileName, IntArray **array);
+
+//véletlen számokkal feltöltés
+void fillArray(int* array, int dimension, int first, int last);
+
+//a tömb kiírása a képernyőre
+void printArray(IntArray* array);
+
 
 
 #endif //INTARRAY_SOURCE_H
