@@ -10,8 +10,8 @@ int main() {
     readArray(fileName, &array1);
     printArray(array1);
 
-    IntArray* array2 = createArray(5);
-    fillArray(array2->elements, array2->size, 0, 50);
+    IntArray* array2 = createArray(15);
+    fillArray(array2->elements, array2->size, 0, 20);
     printArray(array2);
 /*
     char outFile[20];
@@ -24,7 +24,11 @@ int main() {
     sortArray(array2);
     printArray(array2);
 
-    printf("A keresett elem 6, a poz: %i\n", findElement(array2, 6));
+
+    deleteElement(array2, 6);
+    printArray(array2);
+    printf("A legkisebb elem: %i\n", minimum(array2));
+    printf("A legnagyobb elem: %i\n", maximum(array2));
 
     return 0;
 }

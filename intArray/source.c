@@ -82,10 +82,47 @@ int compareFunc(const void* a, const void* b) {
 }
 
 int findElement(IntArray *array, int element) {
+
     for (int i=0; i < array->size; ++i) {
         if (array->elements[i] == element) {
+            printf("A keresett elem %i, a poz: %i\n", element,i);
             return i;
         }
     }
+    printf("Aaaa keresett elem %i, a poz: %i\n", element, -1);
     return -1;
+}
+
+
+void deleteElement(IntArray *array, int element) {
+    int temp;
+    while (findElement(array, element) != -1) {
+        for (int i = findElement(array, element); i < array->size-1; ++i) {
+            array->elements[i] = array->elements[i+1];
+        }
+        array->size--;
+        //realloc(array->elements , array->size);  //how to realloc here?
+        printf("Deleted, size: %i\n", array->size);
+    }
+}
+
+
+int minimum(IntArray* array) {
+    int min = array->elements[0];
+    for (int i=0; i < array->size; ++i) {
+        if (array->elements[i] < min) {
+            min = array->elements[i];
+        }
+    }
+    return min;
+}
+
+int maximum(IntArray* array) {
+    int max = array->elements[0];
+    for (int i=0; i < array->size; ++i) {
+        if (array->elements[i] > max) {
+            max = array->elements[i];
+        }
+    }
+    return max;
 }

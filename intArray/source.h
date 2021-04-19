@@ -36,4 +36,14 @@ int compareFunc(const void* a, const void* b);
 //elem keresése lineáris vagy bináris kereséssel, pozíciót térít vissza
 int findElement(IntArray *array, int element);
 
+//egy elem törlése
+void deleteElement(IntArray *array, int element);
+
+//legkisebb elem
+int minimum(IntArray* array);
+
+
+//legnagyobb elem
+int maximum(IntArray* array);
+
 #endif //INTARRAY_SOURCE_H
