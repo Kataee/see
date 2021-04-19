@@ -26,6 +26,9 @@ void fillArray(int* array, int dimension, int first, int last);
 //a tömb kiírása a képernyőre
 void printArray(IntArray* array);
 
+//file kiírása állományba
+void printArrayToFile(const char* fileName, IntArray *array);
+
 
 
 #endif //INTARRAY_SOURCE_H

@@ -56,3 +56,18 @@ void printArray(IntArray* array) {
     }
     printf("\n");
 }
+
+
+void printArrayToFile(const char* fileName, IntArray *array) {
+    FILE *f;  //file stream
+
+    //check if file can be opened
+    if ((f= fopen(fileName, "w")) == NULL) {
+        printf("Error opening file");
+        exit(7);
+    }
+    for (int i=0; i<array->size; ++i) {
+        fprintf(f, "%i ", array->elements[i]);
+    }
+    printf("success\n");
+}
