@@ -80,3 +80,12 @@ void sortArray(IntArray *array) {
 int compareFunc(const void* a, const void* b) {
     return (*(int*)a - *(int*)b);
 }
+
+int findElement(IntArray *array, int element) {
+    for (int i=0; i < array->size; ++i) {
+        if (array->elements[i] == element) {
+            return i;
+        }
+    }
+    return -1;
+}

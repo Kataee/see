@@ -24,6 +24,7 @@ int main() {
     sortArray(array2);
     printArray(array2);
 
+    printf("A keresett elem 6, a poz: %i\n", findElement(array2, 6));
 
     return 0;
 }

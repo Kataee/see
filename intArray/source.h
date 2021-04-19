@@ -33,6 +33,7 @@ void printArrayToFile(const char* fileName, IntArray *array);
 void sortArray(IntArray *array);
 int compareFunc(const void* a, const void* b);
 
-
+//elem keresése lineáris vagy bináris kereséssel, pozíciót térít vissza
+int findElement(IntArray *array, int element);
 
 #endif //INTARRAY_SOURCE_H
