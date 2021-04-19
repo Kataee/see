@@ -126,3 +126,47 @@ int maximum(IntArray* array) {
     }
     return max;
 }
+
+void copy(IntArray* arrayTo, IntArray* arrayFrom) {
+    if (arrayTo->size == arrayFrom->size) {
+        for ( int i=0; i < arrayTo ->size; ++i) {
+            arrayTo->elements[i] = arrayFrom->elements[i];
+        }
+    } else {
+        printf("Cannot copy, size not equal\n");
+    }
+}
+
+int linearSearch(IntArray* array, int element) {
+    for (int i=0; i < array->size; ++i) {
+        if (element == array->elements[i]) {
+            return element;
+        }
+    }
+    printf("There is no such element\n");
+    return -1;
+}
+
+int binarySearch(IntArray* array, int start, int end, int element) {
+    int middle = (start + end) / 2;
+    if(end < start) {
+        return -1;
+    }
+    if(element==array->elements[middle]) {
+        //printf("BS: A %i szam megtalalva", target);
+        return element;
+    } else if(element<array->elements[middle]) {
+        return binarySearch(array, start, middle - 1, element);
+    } else {
+        return binarySearch(array, middle + 1, end, element);
+    }
+}
+
+int binarySearch2(int array[], int start, int end, int target) {
+    int middle = (start + end) / 2;
+    if(end < start) {
+        return -1;
+    }
+
+
+}

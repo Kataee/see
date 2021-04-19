@@ -25,10 +25,18 @@ int main() {
     printArray(array2);
 
 
-    deleteElement(array2, 6);
+    deleteElement(array2, -6);
     printArray(array2);
     printf("A legkisebb elem: %i\n", minimum(array2));
     printf("A legnagyobb elem: %i\n", maximum(array2));
+
+    IntArray* array3 = createArray(15);
+    copy(array3, array2);
+    printf("Array3: ");
+    printArray(array3);
+
+    printf("A kereses: %i\n", linearSearch(array3, 3));
+    printf("A binaris: %i\n", binarySearch(array3, 0,13,18));
 
     return 0;
 }

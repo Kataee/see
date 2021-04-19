@@ -46,4 +46,14 @@ int minimum(IntArray* array);
 //legnagyobb elem
 int maximum(IntArray* array);
 
+//tömb másolása, de csak ha a hossz egyenlő
+void copy(IntArray* arrayTo, IntArray* arrayFrom);
+
+
+//lineáris keresés
+int linearSearch(IntArray* array, int element);
+
+
+//bináris keresés
+int binarySearch(IntArray* array, int start, int end, int element);
 #endif //INTARRAY_SOURCE_H
