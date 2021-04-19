@@ -41,6 +41,7 @@ void readArray(const char *fileName, IntArray **array) {
         fscanf(f, "%i", &(*array)->elements[i]);
         printf("%i ", (*array)->elements[i]);
     }
+    fclose(f);
 }
 
 void fillArray(int* array, int dimension, int first, int last) {
@@ -70,4 +71,12 @@ void printArrayToFile(const char* fileName, IntArray *array) {
         fprintf(f, "%i ", array->elements[i]);
     }
     printf("success\n");
+    fclose(f);
+}
+
+void sortArray(IntArray *array) {
+    qsort(array->elements, array->size, sizeof(int), compareFunc); //rendezes
+}
+int compareFunc(const void* a, const void* b) {
+    return (*(int*)a - *(int*)b);
 }

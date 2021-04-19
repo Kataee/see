@@ -29,6 +29,10 @@ void printArray(IntArray* array);
 //file kiírása állományba
 void printArrayToFile(const char* fileName, IntArray *array);
 
+//tömb elemeinek sorrendbe rendezése, ezesetben növekvő
+void sortArray(IntArray *array);
+int compareFunc(const void* a, const void* b);
+
 
 
 #endif //INTARRAY_SOURCE_H

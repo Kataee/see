@@ -19,9 +19,10 @@ int main() {
     scanf("%s", outFile);
   */
     char outFile[] = "out.txt";
-
-
     printArrayToFile(outFile, array2);
+    //printArray(array2);
+    sortArray(array2);
+    printArray(array2);
 
 
     return 0;
