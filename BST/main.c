@@ -1,16 +1,17 @@
 #include "header.h"
 
 int main() {
-    /*
+
     Node* asd =NULL;
 
-
-    insert(&asd, 3);
-    insert(&asd, 4);
-    insert(&asd, 5);
-    insert(&asd, 8);
-    insert(&asd, 11);
-    insert(&asd, 1);
+    //27, 14, 35, 10, 19, 31, 42
+    insert(&asd, 27);
+    insert(&asd, 14);
+    insert(&asd, 35);
+    insert(&asd, 10);
+    insert(&asd, 19);
+    insert(&asd, 31);
+    insert(&asd, 42);
 
     printf("inorder ");
     inorder(asd);
@@ -33,8 +34,13 @@ int main() {
     //struct Node* temp = parent(asd,5);
     //printf("parent: %i\n", temp->info);
 
-     */
+
     fel2();
+    //haha ez a B sequence nem clean code + még
+    // lehetne fÜggvényesíteni is, de sokat gondolkodtam rajta
+    //mire egészen összeállt az egész, ezért hagytam benne mindenféle kiírást is
+    //hogy lássék benne a munkám, nem mindenkinek megy ám olyan könnyen, hiába
+    //easy level a feladat #kellazátmenő
 
     return 0;
 }
