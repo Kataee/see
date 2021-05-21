@@ -3,6 +3,7 @@
 
 
 int main() {
+    /*
     heap *h = createHeap(32);
 
 
@@ -13,29 +14,19 @@ int main() {
     }
 
     printf("Print as it is:\n");
-    for (int i=1; i <= h->size; ++i) {
-        printf("%i ", h->data[i]);
-    }
+    print(h);
 
     printf("\nmax: %i\n", max(h));
 
-    printf("\nsize before sort: %i\n", h->size);
+    printf("size: %i\n", h->size);
+    printf("Print: \n");
+    print(h);
 
-
-
-    kupacrendez(h);
-    printf("size after sort: %i\n", h->size);
-    printf("Print after sorting\n");
-    for (int i=1; i <= h->size; ++i) {
-        printf("%i ", h->data[i]);
-    }
-    /*
-    printf("%i ", h->data[1]);
-    printf("%i ", h->data[2]);
-    printf("%i ", h->data[3]);
-    printf("%i ", h->data[9]);
-*/
+    printf("Max: %i\n", torolmax(h));
+    print(h);
     fclose(f);
+     */
+    fel2();
 
     return 0;
 }

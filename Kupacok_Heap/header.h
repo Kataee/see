@@ -29,6 +29,12 @@ int torolmax (heap *h);
 void swap(int*, int*);
 
 heap* two(heap*, heap*);
+void print(heap*);
+
+//###############################
+//EUR
+
+void fel2();
 
 
 
