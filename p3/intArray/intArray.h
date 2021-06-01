@@ -21,6 +21,6 @@ typedef struct {
 IntArray* create();
 void read(const char *fileName, IntArray *array);
 void print(IntArray *array);
-void add(IntArray*);
+void add(IntArray*, char*);
 
 #endif
