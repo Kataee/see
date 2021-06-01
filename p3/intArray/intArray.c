@@ -24,42 +24,40 @@ IntArray* create(int size){
             printf("Error creating char[%i]\n", i);
             exit(3);
         }
+        //printf("char: %s\n", newArray->chr[i]);
     }
     printf("Array created.\n");
 
     return newArray;
 }
 
-void read(const char* fileName, IntArray **array) {
+void read(const char* fileName, IntArray *array) {
     FILE *f; //file stream
 
     // check if file can be opened
     if ((f = fopen(fileName, "r")) == NULL) {
         printf("Error opening file"); exit(4);
     }
-    printf("size %i\n", &(*array)->size);
+    printf("size %i\n", array->size);
     //read
-    for (int i=0; i < &(*array)->size; ++i) {
+    for (int i=0; i < array->size; ++i) {
         if (feof(f)) {
             printf("End of file\n");
-            //realloc((*array)->chr,i);
-            //(*array)->size = i;
-            //printf("Reallocated, size %i\n", &(*array)->size);
+            realloc(array->chr,i);
+            array->size = i;
+            printf("Reallocated, size %i\n", array->size);
             fclose(f);
             return;
         }
         //fgets( (*array)->chr[i], 30, f);
 
         char s[30];
-        fscanf(f, "%s", s);
-        printf("%s ", s);
-        //printf("%c ", s[1]);
+        fscanf(f, "%s", array->chr[i]);
+        //printf("%s ", s);
         //printf("len: %i ", strlen(s));
-        //while (fscanf(f, "%c", ))
-        //printf("%s ", (*array)->chr[i]);
-        //strcpy((*array)->chr[][i] ,s);
+        //strcpy(array->chr[i] ,s);
         //break;
-        (*array)->chr[0] = 'c';
+        printf("chr: %s\n", array->chr[i]);
     }
 }
 

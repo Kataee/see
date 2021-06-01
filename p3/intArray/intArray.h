@@ -19,6 +19,7 @@ typedef struct {
 } IntArray;
 
 IntArray* create();
-void read(const char *fileName, IntArray **array);
+void read(const char *fileName, IntArray *array);
+void print();
 
 #endif
