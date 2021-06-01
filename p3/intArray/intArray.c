@@ -2,8 +2,6 @@
 // Created by Kataee on 01/06/2021.
 //
 
-#include "intArray.h"
-
 IntArray* create(int size){
     IntArray* newArray = (IntArray*)malloc(sizeof(IntArray));
     if (!newArray) {
@@ -43,27 +41,40 @@ void read(const char* fileName, IntArray *array) {
     for (int i=0; i < array->size; ++i) {
         if (feof(f)) {
             printf("End of file\n");
-            realloc(array->chr,i);
+            //realloc(array->chr,i); //breaks the stuff
             array->size = i;
             printf("Reallocated, size %i\n", array->size);
             fclose(f);
             return;
         }
-        //fgets( (*array)->chr[i], 30, f);
-
-        char s[30];
         fscanf(f, "%s", array->chr[i]);
-        //printf("%s ", s);
         //printf("len: %i ", strlen(s));
         //strcpy(array->chr[i] ,s);
-        //break;
-        printf("chr: %s\n", array->chr[i]);
+        //printf("chr %i: %s\n",i, array->chr[i]);
     }
 }
 
 
+void print(IntArray *array) {
+    //printf("%i: %s ",4, array->chr[4]);
+    for (int i=0; i < array->size; ++i) {
+        printf("%i: %s ",i, array->chr[i]);
+    }
+    printf("\n");
+}
+
+void add(IntArray* array, char* s) {
+    array->size++;
+    int size = array->size;
+    array->chr[size] = (char*)malloc(30*sizeof(char));
+    if (!array->chr[size]) {
+        printf("Error creating char[%i]\n", size);
+        exit(5);
+    }
+    array->chr[size-1] = s;
 
 
+}
 
 
 
