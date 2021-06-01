@@ -20,6 +20,7 @@ typedef struct {
 
 IntArray* create();
 void read(const char *fileName, IntArray *array);
-void print();
+void print(IntArray *array);
+void add(IntArray*);
 
 #endif
