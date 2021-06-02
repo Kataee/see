@@ -6,12 +6,22 @@
 //Keresés
 //Elemek számának lekérdezése
 
+//create
+//read
+//print
+//add
+//search
+//search //return boolean
+//num of elements
+//delete element
+
 #ifndef P3_INTARRAY_H
 #define P3_INTARRAY_H
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
 #include <string.h>
+#include <stdbool.h>
 
 typedef struct {
     int size;

@@ -7,7 +7,10 @@ int main() {
     print(arr);
     char* s = "asd";
     add(arr, s);
-    add(arr, s);
     print(arr);
+    search(arr, "prevent");
+    numOfElements(arr);
+    delete(arr, "prevent");
+    //printf("qqq: %s", arr->chr[10]);
     return 0;
 }
