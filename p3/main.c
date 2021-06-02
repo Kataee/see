@@ -4,7 +4,7 @@
 #include "hash/hash.h"
 
 int main() {
-
+/*
     IntArray* arr = create(25);
     read("in.txt", arr);
     print(arr);
@@ -22,9 +22,15 @@ int main() {
 
     print(arr);
     //printf("qqq: %s", arr->chr[10]);
+*/
 
+    HASHTABLE* hash = createH(10);
+    addH(hash, "asd");
+    addH(hash, "asb");
+    addH(hash, "asc");
 
-    //HASHTABLE* hash = create(10);
+    printH(hash);
+
 
 
     return 0;

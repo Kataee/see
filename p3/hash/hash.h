@@ -25,7 +25,8 @@ typedef struct {
 } HASHTABLE;
 
 HASHTABLE* createH(int);
-void addH(HASHTABLE* hash, char* s);
+void addH(HASHTABLE* hash, char* s); //add element to the hash
+void printH(HASHTABLE* array); //print the strings to the console
 
 
 

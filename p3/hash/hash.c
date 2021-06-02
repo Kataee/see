@@ -17,21 +17,21 @@ HASHTABLE* createH(int capacity) {
     newHashTable->elements=0;
 
     //allocating memory
-    newHashTable->table = (char**)malloc(capacity*sizeof(char*));
+    newHashTable->table = (char**)calloc(capacity,sizeof(char*));
     if (!newHashTable->table) {   //check if memory was allocated successfully
         printf("Error creating chr**\n");
         exit(12);
     }
 
     for (int i=0; i<capacity; ++i) {
-        newHashTable->table[i] = (char*)malloc(30*sizeof(char));   //allocating memory
+        newHashTable->table[i] = (char*)calloc(30,sizeof(char));   //allocating memory
         if (!newHashTable->table[i]) {   //check if memory was allocated successfully
             printf("Error creating char[%i]\n", i);
             exit(13);
         }
         //printf("char: %s\n", newArray->chr[i]);
     }
-    printf("Array created.\n");
+    printf("Hash created.\n");
 
     return newHashTable;
 }
@@ -41,19 +41,47 @@ void addH(HASHTABLE* array, char* s) {
     array->elements++; //increasing element count
     int size = array->elements; //segédváltozó
 
-    array->table = (char**)realloc(array->table, size*sizeof(char*));
-
     if (!array->table) {   //check if memory was allocated successfully
         printf("Error creating chr**\n");
         exit(13);
     }
 
-    array->table[size] = (char*)malloc(30*sizeof(char));  //allocating memory
-    if (!array->table[size]) {   //check if memory was allocated successfully
-        printf("Error creating char[%i]\n", size);
-        exit(15);
+    //printf("Length of %s: %i   ", s, strlen(s));
+    int element=0;
+    for (int i=0; i < strlen(s); ++i) {
+        element += s[i];
     }
-    array->table[size-1] = s;   //copy the given string into array
+
+    int i=0,j;
+
+    do {
+        j = (element + i) % array->capacity;
+        if (strcmp(array->table[j], "") == 0) {
+            array->table[j] = s;
+            printf("added: %s\n", array->table[j]);
+            return;
+        } else {
+            i++;
+        }
+    }
+
+    while (i!=array->capacity);
+    printf("Tulcsordulas\n");
+    return;
+
 
 
 }
+
+void printH(HASHTABLE* array) {
+    printf("Print: ");
+    for (int i=0; i < array->capacity; ++i) {
+        if (strcmp(array->table[i], "") == 0) {
+            printf("x ");
+            continue;
+        }
+        printf("%s ", array->table[i]);
+    }
+}
+
+

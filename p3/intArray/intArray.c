@@ -88,7 +88,7 @@ void add(IntArray* array, char* s) {
         exit(5);
     }
     array->chr[size-1] = s;   //copy the given string into array
-    //strcpy((char*)array->chr[size-1], s);
+    //strcpy((char*)array->chr[size-1], s); //problem
 
 
 }
