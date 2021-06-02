@@ -27,6 +27,10 @@ typedef struct {
 HASHTABLE* createH(int);
 void addH(HASHTABLE* hash, char* s); //add element to the hash
 void printH(HASHTABLE* array); //print the strings to the console
+void deleteH(HASHTABLE* hash, char* s); //delete string
+char* searchH (HASHTABLE* hash, char* s);
+
+int sLength(char*);
 
 
 

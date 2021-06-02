@@ -29,9 +29,11 @@ int main() {
     addH(hash, "asb");
     addH(hash, "asc");
 
+
     printH(hash);
-
-
+    deleteH(hash, "asd");
+    printH(hash);
+    searchH(hash, "asd");
 
     return 0;
 }
