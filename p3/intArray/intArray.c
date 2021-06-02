@@ -67,15 +67,28 @@ void print(IntArray *array) {
 }
 
 
+//itt valami nem jó, ha sok elemet adunk hozzá akkor a legelső és néha a második
+// string elvész, random karakterek íródnak ki helyette
+//talán a memóriakezelés
 void add(IntArray* array, char* s) {
     array->size++; //increasing size
-    int size = array->size;
+    int size = array->size; //segédváltozó
+    //array->chr = (char**)realloc(array->chr, size*sizeof(char*));   //causes problems
+
+    if (!array->chr) {   //check if memory was allocated successfully
+        printf("Error creating chr**\n");
+        exit(22);
+    }
+
+
     array->chr[size] = (char*)malloc(30*sizeof(char));  //allocating memory
+
     if (!array->chr[size]) {   //check if memory was allocated successfully
         printf("Error creating char[%i]\n", size);
         exit(5);
     }
     array->chr[size-1] = s;   //copy the given string into array
+    //strcpy((char*)array->chr[size-1], s);
 
 
 }
@@ -116,10 +129,14 @@ bool delete(IntArray* array, char* s) {
                 strcpy(array->chr[i], array->chr[i+1]); //moving - copying elements
             }
             print(array);
-            //free((void *) array->chr[array->size - 1]); // breaks the stuff
+            //free( array->chr[array->size-1]); // breaks the stuff
             array->size--; //decreasing size
+            //mivel csökkentettük a size-t, ezután hibát dob az elem hozzáadás
+            //mert hibás a memóriakezelés
+            //a size kisebb, de nem lett felszabadítva amire már nincs szükség
+            //de hozzáadásnál size+1 a realloc, ami már létezik
 
-            printf("Deletetd. size: %i\n", array->size);
+            printf("Deletetd '%s'. size: %i, index: %i\n\n", s, array->size, index);
             print(array);
         }
 
