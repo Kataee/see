@@ -22,6 +22,7 @@
 #include <time.h>
 #include <string.h>
 #include <stdbool.h>
+#include <time.h>
 
 typedef struct {
     int size;
@@ -29,8 +30,11 @@ typedef struct {
 } IntArray;
 
 IntArray* create();
-void read(const char *fileName, IntArray *array);
-void print(IntArray *array);
-void add(IntArray*, char*);
+void read(const char *fileName, IntArray *array); //read strings from file into char* 2dimension array
+void print(IntArray *array); //print the strings to the console
+void add(IntArray*, char*);     //add new string to the end
+char* search(IntArray*, char*);     //search a string and return it
+int numOfElements(IntArray*);       //return the number of strings
+bool delete(IntArray*, char*);      //delete a string
 
 #endif
