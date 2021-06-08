@@ -10,17 +10,26 @@
 #include  <stdio.h>
 #include <stdbool.h>
 
+
+
 typedef struct {
-    int info;
-    struct NodeType *next;
+    int info, maxSize;
+    int front, rear;
+    int* items;
+    bool firstItem;
 }QUEUENODE;
 
+//QUEUENODE* first;
+//QUEUENODE* last;
 
-bool isEmptyQueue(QUEUENODE*, QUEUENODE*);
-void createQueue(QUEUENODE**);
-void insertQueue(QUEUENODE*, QUEUENODE*, int);
-int deleteQueue(QUEUENODE*, QUEUENODE*);
+void createQueue(QUEUENODE**, int);
+bool isEmptyQueue(QUEUENODE*);
+bool isFullQueue(QUEUENODE*);
+void insertQueue(QUEUENODE*, int);
+int removeFirstItemQueue(QUEUENODE*);
+int topItemQueue(QUEUENODE*);
 void printQueue(QUEUENODE*);
+void fillQueue(QUEUENODE*);
 
 
 #endif //QUEUE_SOURCE_H
