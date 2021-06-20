@@ -18,8 +18,25 @@ int main() {
     load3("in.txt", asd);
     print3(asd);
 
-    qsort(asd->szerzo, 3, sizeof(char*), cmpstr);
+    sortBooks(asd);
     print3(asd);
+
+    int* stat = (int*)calloc(26, sizeof(int));
+    if (stat == NULL) {
+        printf("Cannot create stat\n");
+        return 0;
+    }
+    for (int i=0; i < 3; ++i) {
+        //printf("%c ", asd->cim[0][1]);
+        //int a = asd->cim[i][1];
+        //printf("a: %d", a);
+        stat[(asd->cim[i][1]-97)]++;
+    }
+    printf("\n");
+    for (int i=0; i < 26; ++i) {
+        printf("%i ", stat[i]);
+    }
+    printf("\n");
 
 
 

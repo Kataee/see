@@ -203,3 +203,29 @@ int cmpstr(const void* a, const void* b)
     const char* bb = *(const char**)b;
     return strcmp(aa,bb);
 }
+
+void sortBooks(wordarray_t* asd) {
+    bool sameColor = false;
+    bool sameAuthor = false;
+    for (int i=0; i < 3; ++i) {
+        for (int j=i+1; j < 3; ++j) {
+            if (strcmp(asd->szin[i], asd->szin[j]) == 0) {
+                sameColor = true;
+            }
+            if (strcmp(asd->szerzo[i], asd->szerzo[j]) == 0) {
+                //printf("szerzo: %s %s %i %i\n", asd->szerzo[i], asd->szerzo[j], i, j);
+                sameAuthor = true;
+            }
+            if (sameColor == true && sameAuthor == true) {
+                break;
+            }
+        }
+    }
+    if (sameColor == true && sameAuthor == true) {
+        printf("true\n");
+        qsort(asd->szin, 3, sizeof(char*), cmpstr);
+        return;
+    }
+
+    qsort(asd->szerzo, 3, sizeof(char*), cmpstr);
+}

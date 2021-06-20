@@ -21,6 +21,7 @@ void print3(wordarray_t*);
 void load3(const char*, wordarray_t*);
 void removeChar(char *, char);
 int cmpstr(void const *, void const *);
+void sortBooks(wordarray_t*);
 
 #ifndef UNTITLED3_HEADER_H
 #define UNTITLED3_HEADER_H
