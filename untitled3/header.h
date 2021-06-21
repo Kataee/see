@@ -15,13 +15,15 @@ typedef struct wordarray {
     char **cim;
 } wordarray_t;
 
-wordarray_t *wordarray_create(int);
-char** allocateMemory(char** asd, int size);
+wordarray_t *wordarray_create3(int);
+char** allocateMemory3(char** asd, int size);
 void print3(wordarray_t*);
 void load3(const char*, wordarray_t*);
 void removeChar(char *, char);
 int cmpstr(void const *, void const *);
-void sortBooks(wordarray_t*);
+void sortBooks3(wordarray_t*);
+int* createStat3(wordarray_t*);
+void printStat3(int*);
 
 #ifndef UNTITLED3_HEADER_H
 #define UNTITLED3_HEADER_H

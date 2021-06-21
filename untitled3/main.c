@@ -10,7 +10,7 @@ int main() {
     int size;
     fscanf(f, "%d", &size);
     fclose(f);
-    wordarray_t * asd = wordarray_create(size);
+    wordarray_t * asd = wordarray_create3(size);
     if (asd == NULL) {
         printf("Main: asd == NULL, return\n");
         return 0;
@@ -18,25 +18,12 @@ int main() {
     load3("in.txt", asd);
     print3(asd);
 
-    sortBooks(asd);
+    sortBooks3(asd);
     print3(asd);
 
-    int* stat = (int*)calloc(26, sizeof(int));
-    if (stat == NULL) {
-        printf("Cannot create stat\n");
-        return 0;
-    }
-    for (int i=0; i < 3; ++i) {
-        //printf("%c ", asd->cim[0][1]);
-        //int a = asd->cim[i][1];
-        //printf("a: %d", a);
-        stat[(asd->cim[i][1]-97)]++;
-    }
-    printf("\n");
-    for (int i=0; i < 26; ++i) {
-        printf("%i ", stat[i]);
-    }
-    printf("\n");
+    int* stat3 = createStat3(asd);
+    printStat3(stat3);
+
 
 
 

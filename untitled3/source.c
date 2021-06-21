@@ -3,7 +3,7 @@
 //
 //#include "header.h"
 
-wordarray_t *wordarray_create(int size) {
+wordarray_t *wordarray_create3(int size) {
     //allocating memory
     wordarray_t *newArray = (wordarray_t *) malloc(sizeof(wordarray_t));
 
@@ -17,7 +17,7 @@ wordarray_t *wordarray_create(int size) {
 
     //allocating memory
     //##################################   SZIN
-    newArray->szin = allocateMemory(newArray->szin, size);
+    newArray->szin = allocateMemory3(newArray->szin, size);
     if (newArray->szin == NULL) {
         return NULL;
     }
@@ -38,7 +38,7 @@ wordarray_t *wordarray_create(int size) {
     }
      */
     //##################################   SZERZO
-    newArray->szerzo = allocateMemory(newArray->szerzo, size);
+    newArray->szerzo = allocateMemory3(newArray->szerzo, size);
     if (newArray->szerzo == NULL) {
         return NULL;
     }
@@ -60,7 +60,7 @@ wordarray_t *wordarray_create(int size) {
 
 */
     //##################################   CIM
-    newArray->cim = allocateMemory(newArray->cim, size);
+    newArray->cim = allocateMemory3(newArray->cim, size);
     if (newArray->cim == NULL) {
         return NULL;
     }
@@ -85,7 +85,7 @@ wordarray_t *wordarray_create(int size) {
 }
 
 
-char** allocateMemory(char** asd, int size) {
+char** allocateMemory3(char** asd, int size) {
     asd = (char **) malloc(size* sizeof(char *));
     if (asd == NULL) {   //check if memory was allocated successfully
         free(asd);
@@ -204,7 +204,7 @@ int cmpstr(const void* a, const void* b)
     return strcmp(aa,bb);
 }
 
-void sortBooks(wordarray_t* asd) {
+void sortBooks3(wordarray_t* asd) {
     bool sameColor = false;
     bool sameAuthor = false;
     for (int i=0; i < 3; ++i) {
@@ -228,4 +228,27 @@ void sortBooks(wordarray_t* asd) {
     }
 
     qsort(asd->szerzo, 3, sizeof(char*), cmpstr);
+}
+
+int* createStat3(wordarray_t* asd) {
+    int* stat3 = (int*)calloc(26, sizeof(int));
+    if (stat3 == NULL) {
+        printf("Cannot create stat\n");
+        return 0;
+    }
+    for (int i=0; i < 3; ++i) {
+        //printf("%c ", asd->cim[0][1]);
+        //int a = asd->cim[i][1];
+        //printf("a: %d", a);
+        stat3[(asd->cim[i][1]-97)]++;
+    }
+    return stat3;
+}
+
+void printStat3(int* stat3) {
+    printf("\n");
+    for (int i=0; i < 26; ++i) {
+        printf("%i ", stat3[i]);
+    }
+    printf("\n");
 }
